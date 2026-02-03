@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Code Difference Tool</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>Code Comparison Tool</h1>
+</header>
+
+<div class="container">
+
+  <div class="legend">
+    <span><div class="box added"></div>Code added</span>
+    <span><div class="box deleted"></div>Code deleted</span>
+    <span><div class="box changed"></div>Code changed</span>
+    <span><div class="box missing"></div>Code missing</span>
+  </div>
+
+  <div class="inputs">
+    <textarea id="oldCode" oninput="renderDiff()">int sum(int a, int b) {
+  return a + b;
+}</textarea>
+
+    <textarea id="newCode" oninput="renderDiff()">int sum(int a, int b) {
+  return a + b + 10;
+}</textarea>
+  </div>
+
+  <div class="controls">
+    <button onclick="renderDiff()">Compare</button>
+  </div>
+
+  <div id="diff"></div>
+</div>
+
+<footer>
+  Press <b>Ctrl + Enter</b> to compare
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/diff/dist/diff.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

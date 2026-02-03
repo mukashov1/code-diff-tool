@@ -1,0 +1,129 @@
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    background: #04AA6D;
+    padding: 12px 24px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    color: #ffffff;
+  }
+
+  .container {
+    padding: 16px 24px;
+  }
+
+  /* ===== LEGEND ===== */
+  .legend {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .box {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #999;
+  }
+
+  .added { background: #d4fcbc; }
+  .deleted { background: #ffecec; }
+  .changed { background: #fff5b1; }
+  .missing { background: #e7f3ff; }
+
+  /* ===== INPUTS ===== */
+  .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 220px;
+    resize: vertical;
+    background: #f8f8f8;
+    color: #000000;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+
+  /* ===== CONTROLS ===== */
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  button {
+    background: #04AA6D;
+    border: none;
+    color: #ffffff;
+    padding: 6px 14px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  button.secondary {
+    background: #555555;
+  }
+
+  /* ===== DIFF AREA ===== */
+  #diff {
+    border: 1px solid #cccccc;
+  }
+
+  .d2h-wrapper {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+  }
+
+  .d2h-file-header {
+    display: none;
+  }
+
+  /* Added / Deleted */
+  .d2h-ins { background: #d4fcbc; }
+  .d2h-del { background: #ffecec; }
+
+  /* Changed (word-level) */
+  .d2h-change {
+    background: #fff5b1;
+  }
+
+  /* Missing code (empty side) */
+  .d2h-code-side-empty {
+    background: #e7f3ff !important;
+  }
+
+  footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    color: #555555;
+  }
+
+  @media (max-width: 900px) {
+    .inputs {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -16,16 +16,7 @@ function renderDiff() {
         drawFileList: false,
         outputFormat: 'side-by-side',
         matching: 'lines',
-        diffStyle: 'word',
-        synchronisedScroll: true,
-        renderNothingWhenEmpty: true,
-        colorScheme: 'dark',
-        showFullFile: true // Ensure full texts are always shown
-    });
-
-    // Remove the code-line-number elements
-    document.querySelectorAll('.d2h-code-line-ctn').forEach(element => {
-        element.classList.remove('d2h-code-line-ctn');
+        diffStyle: 'word'
     });
 
     console.log(document.getElementById('diff').innerHTML);

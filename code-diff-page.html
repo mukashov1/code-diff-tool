@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Code Diff</title>
+    <link rel="stylesheet" href="code-diff-style.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <h1>Code Diff</h1>
+      <div class="main">
+        <div class="top-controls">
+          <div class="tc-left">
+            <label>
+              Compare by
+              <select id="mode">
+                <option value="lines" selected>Lines</option>
+                <option value="words">Words</option>
+                <option value="chars">Characters</option>
+              </select>
+            </label>
+            <label>
+              <input id="ignoreWs" type="checkbox" />
+              Ignore whitespace
+            </label>
+            <label>
+              <input id="wrap" type="checkbox" />
+              Wrap
+            </label>
+          </div>
+          <div class="tc-center">
+            <button class="btn" id="swap">Swap</button>
+          </div>
+          <div class="tc-right"></div>
+        </div>
+        <div class="grid">
+          <div>
+            <div class="panel-head">
+              <div>Original</div>
+              <div>
+                <button class="btn" id="copyL">Copy</button>
+                <div class="panel-sub" id="leftInfo">0 lines</div>
+              </div>
+            </div>
+            <textarea id="left" spellcheck="false"></textarea>
+          </div>
+
+          <div>
+            <div class="panel-head">
+              <div>Modified</div>
+
+              <div>
+                <button class="btn" id="copyR">Copy</button>
+                <div class="panel-sub" id="rightInfo">0 lines</div>
+              </div>
+            </div>
+            <textarea id="right" spellcheck="false"></textarea>
+          </div>
+        </div>
+        <div class="out-head">
+          <div id="legend" class="legend">
+            <span class="leg"><span class="sp miss"></span>Code Missing</span>
+            <span class="leg"><span class="sp add"></span>Code Added</span>
+            <span class="leg"><span class="sp chg"></span>Code Changed</span>
+            <span class="leg"><span class="sp del"></span>Code Deleted</span>
+          </div>
+        </div>
+        <div class="out" id="outWrap">
+          <div class="out-panel" id="outLeft"></div>
+          <div class="out-panel" id="outRight"></div>
+        </div>
+        <div class="foot"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/diff@5/dist/diff.min.js"></script>
+    <script src="static/js/code-diff-logic.js"></script>
+  </body>
+</html>
